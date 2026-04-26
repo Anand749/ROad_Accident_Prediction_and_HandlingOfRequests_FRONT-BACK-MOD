@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply font-inter bg-background text-white;
+}
+
+/* ─── Glass cards ──────────────────────────────────────────── */
+.glass-card {
+  @apply bg-surface/60 backdrop-blur-xl border border-white/5 shadow-glow rounded-2xl;
+}
+
+.glass-card-red {
+  @apply bg-surface/70 backdrop-blur-xl border border-accentRed/40 shadow-glow-red rounded-2xl;
+}
+
+.glass-card-blue {
+  @apply bg-surface/60 backdrop-blur-xl border border-accentBlue/30 rounded-2xl;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.15);
+}
+
+/* ─── Grid background ──────────────────────────────────────── */
+.grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* ─── Leaflet map ──────────────────────────────────────────── */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  background: #05060a;
+}
+
+/* ─── SOS pulse animation ──────────────────────────────────── */
+.sos-pulse {
+  box-shadow: 0 0 0 0 rgba(255, 45, 85, 0.6);
+  animation: sos-pulse 1.5s infinite;
+}
+
+@keyframes sos-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 45, 85, 0.9);
+    transform: scale(1);
+  }
+  70% {
+    box-shadow: 0 0 0 18px rgba(255, 45, 85, 0);
+    transform: scale(1.04);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 45, 85, 0);
+    transform: scale(1);
+  }
+}
+
+/* ─── Mic pulse animation ──────────────────────────────────── */
+.mic-pulse {
+  box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.65);
+  animation: mic-pulse 1.8s infinite;
+}
+
+@keyframes mic-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(0, 212, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 212, 255, 0);
+  }
+}
+
+/* ─── Shimmer loading ──────────────────────────────────────── */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.04) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ─── Gradient text ────────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #FF2D55, #00D4FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Confirmation banner pulse ────────────────────────────── */
+.confirm-pulse {
+  animation: confirm-pulse 2s ease-in-out infinite;
+}
+
+@keyframes confirm-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* ─── Smooth hover transition ──────────────────────────────── */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* ─── Scrollbar styling ────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ─── Table styling ────────────────────────────────────────── */
+.data-table th {
+  @apply text-[11px] uppercase tracking-[0.16em] text-gray-400 font-medium;
+}
+
+.data-table td {
+  @apply text-xs;
+}
+
+/* ─── Focus ring ───────────────────────────────────────────── */
+.input-focus {
+  @apply outline-none transition-all duration-200;
+}
+
+.input-focus:focus {
+  @apply border-accentBlue ring-1 ring-accentBlue/30;
+}

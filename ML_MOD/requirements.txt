@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+streamlit
+pandas
+scikit-learn
+joblib
+requests
+geopy
+osmnx
+xgboost
+python-dotenv
+streamlit-js-eval
+streamlit-folium
+folium
